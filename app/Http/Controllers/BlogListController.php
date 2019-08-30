@@ -39,7 +39,9 @@ class BlogListController extends Controller
             'recentBlogList' => $recentBlogList,
             'recentCommentList' => $recentCommentList,
             'timeList' => $timeList,
-            'categoryList' => $categoryList
+            'categoryList' => $categoryList,
+            'siteFirstTitle' => config('site.site_first_name'),
+            'siteSecondTitle' => config('site.site_second_name')
         ));
     }
 }
