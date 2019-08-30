@@ -97,6 +97,10 @@
                     min-height: 10vw;
                     font-size: 16px;
                     font-weight: 400;
+                    display: -webkit-box;
+                    -webkit-box-orient: vertical;
+                    -webkit-line-clamp: 8;
+                    overflow: hidden;
                 }
                 /* 分页 */
                 .page-control{
@@ -224,6 +228,10 @@
                     min-height: 10vw;
                     font-size: 16px;
                     font-weight: 400;
+                    display: -webkit-box;
+                    -webkit-box-orient: vertical;
+                    -webkit-line-clamp: 8;
+                    overflow: hidden;
                 }
                 /* 分页 */
                 .page-control{
@@ -351,6 +359,10 @@
                     min-height: 10vw;
                     font-size: 16px;
                     font-weight: 400;
+                    display: -webkit-box;
+                    -webkit-box-orient: vertical;
+                    -webkit-line-clamp: 8;
+                    overflow: hidden;
                 }
                 /* 分页 */
                 .page-control{
@@ -500,6 +512,10 @@
                     min-height: 10vw;
                     font-size: 16px;
                     font-weight: 400;
+                    display: -webkit-box;
+                    -webkit-box-orient: vertical;
+                    -webkit-line-clamp: 8;
+                    overflow: hidden;
                 }
                 .page-control{
                     padding: 0;
@@ -584,24 +600,25 @@
         <div class="wrap">
             <!-- 头 -->
             <header>
-                <h1>{{ $blogName }}</h1>
-                <p class="header-info">{{ $blogInfo }}</p>
+                <h1> $blogName </h1>
+                <p class="header-info"> $blogInfo </p>
             </header>
             <!-- 内容模块 -->
             <div class="content">
                 <!-- 文章列表 -->
                 <ul class="list-section">
-                @foreach ($list as $item)
+                @foreach ($blogList as $item)
                     <li class="list-item">
                         <h2>{{ $item->title }}</h2>
                         <div class="options">
-                            <a href="#">{{ $item->createdAt }}</a>
+                            <a href="#">{{ $item->created_at }}</a>
                             <a href="#">留下你的评论</a>
                         </div>
                         <div class="list-item-content">
                             {{ $item->content }}
                         </div>
                     </li>
+                @endforeach
                     <li class="list-item page-control">
                         <ul class="pages">
                             <li><a href="#">1</a></li>
@@ -614,7 +631,6 @@
                             <li>8</li>
                         </ul>
                     </li>
-                @endforeach
                 </ul>
                 <!-- 右侧栏 -->
                 <section class="side-section">
@@ -627,8 +643,8 @@
                     <div class="recent-article">
                         <h3>近期文章</h3>
                         <ul>
-                        @foreach ($recentArticle as $item)
-                            <li>{{ $item }}</li>
+                        @foreach ($recentBlogList as $item)
+                            <li>{{ $item->title }}</li>
                         @endforeach
                         </ul>
                     </div>
@@ -636,8 +652,8 @@
                     <div class="recent-comment">
                         <h3>近期评论</h3>
                         <ul>
-                        @foreach ($recentComment as $item)
-                            <li>{{ $item }}</li>
+                        @foreach ($recentCommentList as $item)
+                            <li>{{ $item->title }}</li>
                         @endforeach
                         </ul>
                     </div>
@@ -645,8 +661,8 @@
                     <div class="time-archive">
                         <h3>文章归档</h3>
                         <ul>
-                        @foreach ($timeArchive as $item)
-                            <li>{{ $item }}</li>
+                        @foreach ($timeList as $item)
+                            <li>{{ $item->title }}</li>
                         @endforeach
                         </ul>
                     </div>
@@ -654,8 +670,8 @@
                     <div class="category-archive">
                         <h3>分类目录</h3>
                         <ul>
-                        @foreach ($categoryArchive as $item)
-                            <li>{{ $item }}</li>
+                        @foreach ($categoryList as $item)
+                            <li>{{ $item->title }}</li>
                         @endforeach
                         </ul>
                     </div>
