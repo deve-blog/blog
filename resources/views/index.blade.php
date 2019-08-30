@@ -653,7 +653,7 @@
                         <h3>近期评论</h3>
                         <ul>
                         @foreach ($recentCommentList as $item)
-                            <li>{{ $item->title }}</li>
+                            <li>{{ $item->name }}发表在{{ $item->blog->title }}</li>
                         @endforeach
                         </ul>
                     </div>
@@ -662,7 +662,7 @@
                         <h3>文章归档</h3>
                         <ul>
                         @foreach ($timeList as $item)
-                            <li>{{ $item->title }}</li>
+                            <li>{{ $item }}</li>
                         @endforeach
                         </ul>
                     </div>
@@ -671,7 +671,7 @@
                         <h3>分类目录</h3>
                         <ul>
                         @foreach ($categoryList as $item)
-                            <li>{{ $item->title }}</li>
+                            <li>{{ $item->cat_name }}</li>
                         @endforeach
                         </ul>
                     </div>
