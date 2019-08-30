@@ -50,9 +50,10 @@
                     <!-- 搜索输入 -->
                     <div class="input-search">
                         <input type="text" name="search" id="search" placeholder="搜索...">
-                        <img src="#" alt="搜索" title="点击搜索">
+                        <img src="./img/search.png" alt="搜索" title="点击搜索">
                     </div>
                     <!-- 最近文章 -->
+                    @if(!$recentBlogList->isEmpty())
                     <div class="recent-article">
                         <h3>近期文章</h3>
                         <ul>
@@ -61,7 +62,9 @@
                         @endforeach
                         </ul>
                     </div>
+                    @endif
                     <!-- 最近评论 -->
+                    @if(!$recentCommentList->isEmpty())
                     <div class="recent-comment">
                         <h3>近期评论</h3>
                         <ul>
@@ -70,7 +73,9 @@
                         @endforeach
                         </ul>
                     </div>
+                    @endif
                     <!-- 按时间归档 -->
+                    @if(!$timeList->isEmpty())
                     <div class="time-archive">
                         <h3>文章归档</h3>
                         <ul>
@@ -79,7 +84,9 @@
                         @endforeach
                         </ul>
                     </div>
+                    @endif
                     <!-- 按分类归档 -->
+                    @if(!$categoryList->isEmpty())
                     <div class="category-archive">
                         <h3>分类目录</h3>
                         <ul>
@@ -88,6 +95,7 @@
                         @endforeach
                         </ul>
                     </div>
+                    @endif
                     <!-- 日历 -->
                     <div class="calender"></div>
                 </section>
@@ -97,6 +105,16 @@
 
             </footer>
         </div>
+
+        <script>
+            let query = location.search.slice(1).split('&');
+            let q = {}
+            for(let o of query){
+                let sub = o.split('=');
+                q[sub[0]]=sub[1];
+            }
+            console.log(q)
+        </script>
     </body>
 
 </html>
