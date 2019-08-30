@@ -7,7 +7,6 @@ use App\Comment;
 use App\Paginate;
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
 
 class BlogListController extends Controller
 {
@@ -20,7 +19,7 @@ class BlogListController extends Controller
     public function __invoke(Request $request)
     {
         // 获取博客列表
-        $page = intval($request->get('page'));
+        $page = intval($request->get('p'));
         $page <= 0 && $page = 1;
         $paginate = new Paginate($page);
         $blogList = Blog::getBlogListByPaginate($paginate);
@@ -40,7 +39,9 @@ class BlogListController extends Controller
             'recentBlogList' => $recentBlogList,
             'recentCommentList' => $recentCommentList,
             'timeList' => $timeList,
-            'categoryList' => $categoryList
+            'categoryList' => $categoryList,
+            'siteFirstTitle' => config('site.site_first_title'),
+            'siteSecondTitle' => config('site.site_second_title')
         ));
     }
 }
