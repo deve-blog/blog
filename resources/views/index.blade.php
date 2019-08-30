@@ -615,7 +615,7 @@
                             <a href="#">留下你的评论</a>
                         </div>
                         <div class="list-item-content">
-                            {{ $item->content }}
+                            {{ $item->text }}
                         </div>
                     </li>
                 @endforeach
