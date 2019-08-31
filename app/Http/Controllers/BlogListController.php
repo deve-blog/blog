@@ -3,10 +3,12 @@
 namespace App\Http\Controllers;
 
 use App\Blog;
+use App\Category;
 use App\Comment;
 use App\Paginate;
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Http\Request;
+use Illuminate\Support\Carbon;
 
 class BlogListController extends Controller
 {
@@ -21,11 +23,12 @@ class BlogListController extends Controller
         // 获取博客列表
         $page = intval($request->get('p'));
         $page <= 0 && $page = 1;
-        $paginate = new Paginate($page);
+        $paginate = new Paginate($page, config('site.list_size'));
         $blogList = Blog::getBlogListByPaginate($paginate);
         /** @var Blog $blog */
         foreach ($blogList as $blog) {
             $blog->text = strip_tags($blog->content);
+            $blog->created_at_text = $blog->created_at->format('Y年m月d日');
         }
         // 近期文章
         $recentBlogList= Blog::getRecentBlogList(config('site.recent_blog_size'));
@@ -33,7 +36,7 @@ class BlogListController extends Controller
         $recentCommentList = Comment::getRecentCommenList(config('site.recent_comment_size'));
         // 时间归档
         $timeList = Blog::timeArchive(config('site.time_archive_size'));
-        $categoryList = new Collection();
+        $categoryList = Category::getCategoryListOfHasBlog(config('site.category_size'));
         return view('index', array(
             'blogList' => $blogList,
             'recentBlogList' => $recentBlogList,

@@ -5,13 +5,16 @@ namespace App;
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\DB;
-use League\Flysystem\Config;
 
 class Blog extends Model
 {
 
     public function comment() {
         return $this->hasMany(Comment::class);
+    }
+
+    public function category() {
+        return $this->belongsTo(Category::class, 'cat_id', 'id');
     }
 
     /**

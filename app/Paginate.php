@@ -7,12 +7,12 @@ use Illuminate\Database\Eloquent\Model;
 class Paginate extends Model
 {
     protected $page;
-    protected $size = 15;
+    protected $size;
 
-    public function __construct($page = null, $size = null) {
+    public function __construct($page, $size) {
         parent::__construct();
-        $page && $this->page = $page;
-        $size && $this->size = $size;
+        $this->page = $page;
+        $this->size = $size;
     }
 
     public function getSize() {

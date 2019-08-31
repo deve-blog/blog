@@ -10,5 +10,9 @@ return [
     // 网站一级标题
     'site_first_title' => '自由的小鸟',
     // 网站二级标题
-    'site_second_tile' => '加油、加油、你是最棒的'
+    'site_second_title' => '加油、加油、你是最棒的',
+    // 博客列表页，每页的大小
+    'list_size' => 15,
+    // 显示分类的个数
+    'category_size' => 15,
 ];

@@ -24,7 +24,7 @@
                     <li class="list-item">
                         <h2>{{ $item->title }}</h2>
                         <div class="options">
-                            <a href="#">{{ $item->created_at }}</a>
+                            <a href="#">{{ $item->created_at_text }}</a>
                             <a href="#">留下你的评论</a>
                         </div>
                         <div class="list-item-content">
