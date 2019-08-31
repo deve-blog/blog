@@ -17,6 +17,10 @@ class Blog extends Model
         return $this->belongsTo(Category::class, 'cat_id', 'id');
     }
 
+    public function user() {
+        return $this->belongsTo(User::class);
+    }
+
     /**
      * 获取分页博客列表数据
      * @param Paginate $paginate
@@ -50,5 +54,13 @@ class Blog extends Model
             ->distinct()
             ->limit($num)
             ->pluck('date');
+    }
+
+    /**
+     * @param $id
+     * @return Blog|null
+     */
+    public static function getBlogById($id) {
+        return self::find($id);
     }
 }

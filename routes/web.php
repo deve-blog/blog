@@ -12,3 +12,5 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', 'BlogListController');
+
+Route::get('/blog/{id}', 'BlogController');
