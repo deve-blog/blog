@@ -63,4 +63,24 @@ class Blog extends Model
     public static function getBlogById($id) {
         return self::find($id);
     }
+
+    /**
+     * 获取当前博客上一篇博客
+     * @return Blog|null
+     */
+    public function getPreviousBlog() {
+        return $this->where('id', '<', $this->id)
+                    ->orderBy('id', 'desc')
+                    ->first();
+    }
+
+    /**
+     * 获取当前博客下一篇博客
+     * @return Blog|null
+     */
+    public function getNextBlog() {
+        return $this->where('id', '>', $this->id)
+            ->orderBy('id', 'asc')
+            ->first();
+    }
 }
