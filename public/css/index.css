@@ -5,7 +5,7 @@
 }
 html,body{
     width: 100%;
-    background-color: #000;
+    background-color: #1a1a1a;
 }
 /* 头 */
 header{
@@ -59,11 +59,11 @@ footer{
         justify-content: flex-start;
         flex-wrap: wrap;
         padding: 60px 0;
-        border-top: 3px dashed rgba(0,0,0,.4);
+        /* border-top: 3px dashed rgba(0,0,0,.4); */
     }
     .list-item h2{
         width: 100%;
-        font-size: 28px;
+        font-size: 30px;
         font-weight: 700;
         margin-bottom: 20px;
     }
@@ -72,6 +72,7 @@ footer{
         color: #686868;
     }
     .list-item .options a{
+        margin-top: 1vw;
         font-size: 13px;
         display: block;
         color: #686868;
@@ -83,6 +84,7 @@ footer{
         text-decoration: underline;
     }
     .list-item .list-item-content{
+        line-height: 1.75;
         width: 70%;
         min-height: 10vw;
         font-size: 16px;
@@ -126,7 +128,7 @@ footer{
         width: 25%;
     }
     .side-section div{
-        border-top: 4px solid #000;
+        border-top: 4px solid #1a1a1a;
         padding: 20px 0 70px 0;
     }
     .side-section ul{
@@ -139,6 +141,11 @@ footer{
         overflow: hidden;
         white-space: nowrap;
         text-overflow: ellipsis;
+        font-size: .8em;
+    }
+    .side-section a{
+        color: #6791ee;
+        text-decoration: none;
     }
     /* 侧边栏搜索框 */
     .side-section .input-search{
@@ -190,11 +197,11 @@ footer{
         justify-content: flex-start;
         flex-wrap: wrap;
         padding: 60px 0;
-        border-top: 3px dashed rgba(0,0,0,.4);
+        /* border-top: 3px dashed rgba(0,0,0,.4); */
     }
     .list-item h2{
         width: 100%;
-        font-size: 28px;
+        font-size: 30px;
         font-weight: 700;
         margin-bottom: 20px;
     }
@@ -203,6 +210,7 @@ footer{
         color: #686868;
     }
     .list-item .options a{
+        margin-top: 1vw;
         font-size: 13px;
         display: block;
         color: #686868;
@@ -214,6 +222,7 @@ footer{
         text-decoration: underline;
     }
     .list-item .list-item-content{
+        line-height: 1.75;
         width: 70%;
         min-height: 10vw;
         font-size: 16px;
@@ -256,7 +265,7 @@ footer{
         width: 25%;
     }
     .side-section div{
-        border-top: 4px solid #000;
+        border-top: 4px solid #1a1a1a;
         padding: 20px 0 70px 0;
     }
     .side-section ul{
@@ -269,6 +278,11 @@ footer{
         overflow: hidden;
         white-space: nowrap;
         text-overflow: ellipsis;
+        font-size: .8em;
+    }
+    .side-section a{
+        color: #6791ee;
+        text-decoration: none;
     }
     /* 侧边栏搜索框 */
     .side-section .input-search{
@@ -321,19 +335,21 @@ footer{
         justify-content: flex-start;
         flex-wrap: wrap;
         padding: 60px 0;
-        border-top: 3px dashed rgba(0,0,0,.4);
+        /* border-top: 3px dashed rgba(0,0,0,.4); */
     }
     .list-item h2{
         width: 100%;
-        font-size: 28px;
+        font-size: 30px;
         font-weight: 700;
         margin-bottom: 20px;
     }
     .list-item .options{
         width: 30%;
         color: #686868;
+        padding: 0 0 1vw;
     }
     .list-item .options a{
+        margin-top: 1vw;
         font-size: 13px;
         display: block;
         color: #686868;
@@ -345,10 +361,11 @@ footer{
         text-decoration: underline;
     }
     .list-item .list-item-content{
+        line-height: 1.75;
         width: 70%;
         min-height: 10vw;
         font-size: 16px;
-        font-weight: 400;
+        font-weight: 100;
         display: -webkit-box;
         -webkit-box-orient: vertical;
         -webkit-line-clamp: 8;
@@ -392,13 +409,13 @@ footer{
         flex-wrap: wrap;
     }
     .side-section div{
-        width: 24%;
-        border-top: 4px solid #000;
+        width: 49%;
+        border-top: 4px solid #1a1a1a;
         padding: 20px 0 70px 0;
     }
     .side-section div:first-child{
         width: 100%;
-        border-top: 4px solid #000;
+        border-top: 4px solid #1a1a1a;
         padding: 20px 0 70px 0;
     }
     .side-section ul{
@@ -411,7 +428,13 @@ footer{
         overflow: hidden;
         white-space: nowrap;
         text-overflow: ellipsis;
+        font-size: .8em;
     }
+    .side-section a{
+        color: #6791ee;
+        text-decoration: none;
+    }
+    
     /* 侧边栏搜索框 */
     .side-section .input-search{
         display: flex;
@@ -462,11 +485,11 @@ footer{
         justify-content: flex-start;
         flex-wrap: wrap;
         padding: 60px 0;
-        border-top: 3px dashed rgba(0,0,0,.4);
+        /* border-top: 3px dashed rgba(0,0,0,.4); */
     }
     .list-item h2{
         width: 100%;
-        font-size: 28px;
+        font-size: 30px;
         font-weight: 700;
         margin-bottom: 20px;
     }
@@ -479,8 +502,10 @@ footer{
         justify-content: center;
         align-items: center;
         color: #686868;
+        padding: 0 0 2vw;
     }
     .list-item .options a{
+        margin-top: 1vw;
         font-size: 13px;
         color: #686868;
         text-decoration: none;
@@ -499,9 +524,10 @@ footer{
         text-decoration: underline;
     }
     .list-item .list-item-content{
+        line-height: 1.75;
         min-height: 10vw;
         font-size: 16px;
-        font-weight: 400;
+        font-weight: 100;
         display: -webkit-box;
         -webkit-box-orient: vertical;
         -webkit-line-clamp: 8;
@@ -549,7 +575,7 @@ footer{
     }
     .side-section div{
         width: 100%;
-        border-top: 4px solid #000;
+        border-top: 4px solid #1a1a1a;
         padding: 20px 0 70px 0;
     }
     .side-section ul{
@@ -562,7 +588,13 @@ footer{
         overflow: hidden;
         white-space: nowrap;
         text-overflow: ellipsis;
+        font-size: .8em;
     }
+    .side-section a{
+        color: #6791ee;
+        text-decoration: none;
+    }
+    
     /* 侧边栏搜索框 */
     .side-section .input-search{
         display: flex;

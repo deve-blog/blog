@@ -22,10 +22,10 @@
                 <ul class="list-section">
                 @foreach ($blogList as $item)
                     <li class="list-item">
-                        <h2>{{ $item->title }}</h2>
+                        <h2><a href="/blog/{{ $item->id }}">{{ $item->title }}</a></h2>
                         <div class="options">
                             <a href="#">{{ $item->created_at_text }}</a>
-                            <a href="#">留下你的评论</a>
+                            <a href="#">留下评论</a>
                         </div>
                         <div class="list-item-content">
                             {{ $item->text }}
@@ -58,7 +58,7 @@
                         <h3>近期文章</h3>
                         <ul>
                         @foreach ($recentBlogList as $item)
-                            <li>{{ $item->title }}</li>
+                            <li><a href="#">{{ $item->title }}</a></li>
                         @endforeach
                         </ul>
                     </div>
@@ -69,7 +69,7 @@
                         <h3>近期评论</h3>
                         <ul>
                         @foreach ($recentCommentList as $item)
-                            <li>{{ $item->name }}发表在{{ $item->blog->title }}</li>
+                            <li><a href="#">{{ $item->name }}</a> 发表在 <a href="#">{{ $item->blog->title }}</a></li>
                         @endforeach
                         </ul>
                     </div>
@@ -80,7 +80,7 @@
                         <h3>文章归档</h3>
                         <ul>
                         @foreach ($timeList as $item)
-                            <li>{{ $item }}</li>
+                            <li><a href="#">{{ $item }}</a></li>
                         @endforeach
                         </ul>
                     </div>
@@ -91,7 +91,7 @@
                         <h3>分类目录</h3>
                         <ul>
                         @foreach ($categoryList as $item)
-                            <li>{{ $item->cat_name }}</li>
+                            <li><a href="#">{{ $item->cat_name }}</a></li>
                         @endforeach
                         </ul>
                     </div>
