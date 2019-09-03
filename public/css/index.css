@@ -17,6 +17,10 @@ header h1{
     font-size: 23px;
     font-weight: 700;
 }
+header h1 a{
+    text-decoration: none;
+    color: #1a1a1a;
+}
 header .header-info{
     margin-top: 5px;
     font-size: 13px;
@@ -67,6 +71,10 @@ footer{
         font-weight: 700;
         margin-bottom: 20px;
     }
+    .list-item h2 a{
+        text-decoration: none;
+        color: #1a1a1a;
+    }
     .list-item .options{
         width: 30%;
         color: #686868;
@@ -88,7 +96,7 @@ footer{
         width: 70%;
         min-height: 10vw;
         font-size: 16px;
-        font-weight: 400;
+        font-weight: 100;
         display: -webkit-box;
         -webkit-box-orient: vertical;
         -webkit-line-clamp: 8;
@@ -132,15 +140,10 @@ footer{
         padding: 20px 0 70px 0;
     }
     .side-section ul{
-        list-style-position: inside;
-        margin-top: 20px;
+        margin: 20px 0 0 1em;
     }
     .side-section ul li{
-        list-style-position: inside;
         margin-top: 20px;
-        overflow: hidden;
-        white-space: nowrap;
-        text-overflow: ellipsis;
         font-size: .8em;
     }
     .side-section a{
@@ -165,6 +168,14 @@ footer{
         width: 24px;
         background-color: #fff;
         padding: 12px;
+    }
+    /* 详情 */
+    .detail{
+        width: 70%;
+        display: flex;
+        justify-content: space-between;
+        align-content: flex-start;
+        flex-wrap: wrap;
     }
 }
 /* pc */
@@ -205,6 +216,10 @@ footer{
         font-weight: 700;
         margin-bottom: 20px;
     }
+    .list-item h2 a{
+        text-decoration: none;
+        color: #1a1a1a;
+    }
     .list-item .options{
         width: 30%;
         color: #686868;
@@ -226,7 +241,7 @@ footer{
         width: 70%;
         min-height: 10vw;
         font-size: 16px;
-        font-weight: 400;
+        font-weight: 100;
         display: -webkit-box;
         -webkit-box-orient: vertical;
         -webkit-line-clamp: 8;
@@ -269,15 +284,10 @@ footer{
         padding: 20px 0 70px 0;
     }
     .side-section ul{
-        list-style-position: inside;
-        margin-top: 20px;
+        margin: 20px 0 0 1em;
     }
     .side-section ul li{
-        list-style-position: inside;
         margin-top: 20px;
-        overflow: hidden;
-        white-space: nowrap;
-        text-overflow: ellipsis;
         font-size: .8em;
     }
     .side-section a{
@@ -302,6 +312,14 @@ footer{
         width: 24px;
         background-color: #fff;
         padding: 12px;
+    }
+    /* 详情 */
+    .detail{
+        width: 70%;
+        display: flex;
+        justify-content: space-between;
+        align-content: flex-start;
+        flex-wrap: wrap;
     }
 }
 /* pad */
@@ -342,6 +360,10 @@ footer{
         font-size: 30px;
         font-weight: 700;
         margin-bottom: 20px;
+    }
+    .list-item h2 a{
+        text-decoration: none;
+        color: #1a1a1a;
     }
     .list-item .options{
         width: 30%;
@@ -419,15 +441,10 @@ footer{
         padding: 20px 0 70px 0;
     }
     .side-section ul{
-        list-style-position: inside;
-        margin-top: 20px;
+        margin: 20px 0 0 1em;
     }
     .side-section ul li{
-        list-style-position: inside;
         margin-top: 20px;
-        overflow: hidden;
-        white-space: nowrap;
-        text-overflow: ellipsis;
         font-size: .8em;
     }
     .side-section a{
@@ -453,6 +470,14 @@ footer{
         width: 24px;
         background-color: #fff;
         padding: 12px;
+    }
+    /* 详情 */
+    .detail{
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-content: flex-start;
+        flex-wrap: wrap;
     }
 }
 /* phone */
@@ -492,6 +517,10 @@ footer{
         font-size: 30px;
         font-weight: 700;
         margin-bottom: 20px;
+    }
+    .list-item h2 a{
+        text-decoration: none;
+        color: #1a1a1a;
     }
     .list-item h2:hover{
         cursor: pointer;
@@ -579,15 +608,10 @@ footer{
         padding: 20px 0 70px 0;
     }
     .side-section ul{
-        list-style-position: inside;
-        margin-top: 20px;
+        margin: 20px 0 0 1em;
     }
     .side-section ul li{
-        list-style-position: inside;
         margin-top: 20px;
-        overflow: hidden;
-        white-space: nowrap;
-        text-overflow: ellipsis;
         font-size: .8em;
     }
     .side-section a{
@@ -614,4 +638,236 @@ footer{
         background-color: #fff;
         padding: 12px;
     }
+    /* 详情 */
+    .detail{
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-content: flex-start;
+        flex-wrap: wrap;
+    }
+}
+
+/* 文章详情,评论 */
+.article-title{
+    width: 100%;
+    font-size: 40px;
+    font-weight: 700;
+    margin-bottom: 30px;
+}
+.detail-userinfo{
+    width: 20%;
+}
+.detail-userinfo img{
+    display: block;
+    width: 50px;
+    height: 50px;
+}
+.detail-userinfo p{
+    font-size: 13px;
+    font-weight: 400;
+}
+.detail-userinfo p:hover{
+    cursor: pointer;
+    color: #007acc;
+    text-decoration: underline;
+}
+.detail article{
+    width: 75%;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 28px;
+    margin-bottom: 100px;
+}
+.detail .comment-count{
+    display: block;
+    width: 100%;
+    padding: 28px 0;
+    font-size: 23px;
+    font-weight: 700;
+    border-top: 4px solid #000;
+}
+/* 评论列表 */
+.detail .comment-list{
+    list-style: none;
+}
+.detail .comment-list li{
+    border-top: 2px solid #cbcbcb;
+    padding: 40px 0;
+    display: flex;
+    justify-content: flex-start;
+    align-content: flex-start;
+    flex-wrap: wrap;
+}
+.comment-userinfo{
+    display: flex;
+    justify-content: flex-start;
+    width: 100%;
+    margin-bottom: 30px;
+}
+.comment-userinfo img{
+    display: block;
+    width: 40px;
+    height: 40px;
+}
+.comment-userinfo p{
+    margin-left: 10px;
+}
+.comment-userinfo span{
+    display: block;
+}
+.comment-userinfo span:hover{
+    display: block;
+    cursor: pointer;
+}
+.comment-userinfo span:first-child{
+    font-size: 16px;
+    font-weight: 700;
+    color: #007acc;
+}
+.comment-userinfo span:first-child:hover{
+    color: #686868;
+}
+.comment-userinfo span:last-child{
+    font-size: 13px;
+    font-weight: 400;
+    color: #686868;
+}
+.comment-userinfo span:last-child:hover{
+    color: #007acc;
+}
+.comment-tips{
+    padding: 10px;
+    font-size: 13px;
+    font-weight: 400;
+    color: #686868;
+}
+.comment-content{
+    font-size: 16px;
+    font-weight: 100;
+    line-height: 28px;
+    padding: 0 5px;
+    margin: 28px 0;
+}
+.comment-reply{
+    margin-top: 15px;
+    padding: 5px 7px;
+    color: #007acc;
+    outline: 0;
+    border: 1px solid #d1d1d1;
+    background-color: #fff;
+    border-radius: 2px;
+}
+/* 创建评论 */
+.create-comment{
+    display: flex;
+    justify-content: flex-start;
+    align-content: flex-start;
+    flex-wrap: wrap;
+    border-top: 4px solid #000;
+    margin-top: 70px;
+}
+.create-comment h3{
+    width: 100%;
+    margin: 30px 0;
+    font-size: 23px;
+    font-weight: 700;
+    line-height: 30px;
+}
+.create-comment .create-tips{
+    width: 100%;
+    font-size: 13px;
+    font-weight: 40;
+    line-height: 21px;
+}
+.create-comment .inputbox{
+    width: 100%;
+    margin-top: 25px;
+}
+.create-comment .inputbox-checkbox{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    user-select: none;
+}
+.inputbox-checkbox .checkbox{
+    width: auto;
+    margin-right: 5px;
+}
+.create-comment label{
+    width: 100%;
+    display: block;
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 21px;
+    margin-bottom: 3px;
+}
+.create-comment .input,.create-comment textarea{
+    width: 100%;
+    background-color: #f6f6f6;
+    border: 1px #cbcbcb solid;
+    border-radius: 2px;
+    padding-left: 10px;
+}
+.create-comment .input{
+    height: 40px;
+}
+.create-comment textarea{
+    padding-top: 5px;
+}
+.create-comment .input:focus,.create-comment textarea:focus{
+    background-color: #fff;
+    border-color: #007acc;
+    color: #1a1a1a;
+    outline: 0;
+}
+.create-comment .submit-btn{
+    margin: 30px 0;
+    background: #1a1a1a;
+    border: 0;
+    border-radius: 2px;
+    color: #fff;
+    font-weight: 700;
+    padding: 10px 20px;
+    text-transform: uppercase;
+}
+.create-comment .submit-btn:hover{
+    cursor: pointer;
+    background-color: #006fc5;
+}
+
+/* 翻页键 */
+.detail-page-control{
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 100vw;
+    color: #686868;
+    font-size: 13px;
+    font-weight: 400;
+}
+.detail-page-control a{
+    display: block;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    color: #686868;
+    font-size: 22px;
+    font-weight: 700;
+    padding: 28px 0;
+    border-top: 4px #000 solid;
+    text-decoration: none;
+    cursor: pointer;
+}
+.detail-page-control a:hover p{
+    color: #007acc;
+}
+.detail-page-control span{
+    font-size: 13px;
+    font-weight: 300;
+}
+.detail-page-control p{
+    width: 100%;
+    color: #1a1a1a;
 }
