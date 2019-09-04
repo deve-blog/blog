@@ -11,6 +11,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+// 博客列表页
 Route::get('/', 'BlogListController');
 
-Route::get('/blog/{id}', 'BlogController');
+//  博客详情页
+Route::get('/blog/{id}', 'BlogController@index');
+
+// 新增评论
+Route::post('/comment/add', 'BlogController@addComment');
