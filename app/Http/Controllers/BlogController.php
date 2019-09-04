@@ -52,7 +52,7 @@ class BlogController extends Controller
         $comment->created_at = $date;
         $comment->updated_at = $date;
         if ($comment->save()) {
-            return redirect()->route('blog', ['id' => $blogId]);
+            return redirect()->route('/blog/{id}', ['id' => $blogId]);
         } else {
             return back()->withInput();
         }
