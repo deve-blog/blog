@@ -73,7 +73,7 @@
                     </div>
                     @endif
                     <!-- 日历 -->
-                    <div class="calender"></div>
+                    <div class="calender" id="calender"></div>
                 </section>
             </div>
             <!-- 脚 -->
@@ -89,7 +89,59 @@
                 let sub = o.split('=');
                 q[sub[0]]=sub[1];
             }
-            console.log(q)
+            // generate calender
+            calender('calender','2019-02-03')
+            function calender(id,timestamp){
+                // 返回的日历数组
+                let arr = [];
+                // 今天
+                let today = timestamp?new Date(timestamp):new Date();
+                let year = today.getFullYear(); // 年
+                let month = today.getMonth()+1; // 月
+                let td = today.getDate(); // 日
+
+                // 当月一号的星期数字
+                let startWeekNum = new Date(`${year}-${month}-1`).getDay();
+                // 当月 起始数字
+                let startDayNum = 1;
+                // 循环标志位
+                let brk = false;
+                // 日历循环 5行7列
+                for(let i=0;i<5;i++){
+                    if(brk) break;
+                    for(let j=0;j<7;j++){
+                        // 判断是否退出循环
+                        if(brk) break;
+                        // 
+                        if(j<startWeekNum && startDayNum===1) continue;
+                        if(!arr[i]) arr[i] = [];
+                        arr[i][startWeekNum] = startDayNum;
+                        // 天数+1
+                        startDayNum++;
+                        ++startWeekNum>=7?startWeekNum=0:'';
+                        // 判断不是同一个月份
+                        if(new Date(`${year}-${month}-${startDayNum}`).getMonth()+1 !== month){
+                            brk =true;
+                        }
+                    }
+                }
+                // init innerHTML string
+                let str = '<ul><li>日</li><li>一</li><li>二</li><li>三</li><li>四</li><li>五</li><li>六</li></ul>';
+                for(let i=0;i<arr.length;i++){
+                    let ul = arr[i];
+                    str+='<ul>';
+                    for(let j=0;j<7;j++){
+                        let li = ul[j];
+                        if(td === li){
+                            str+=`<li class='today'>${li || ''}</li>`
+                        }else{
+                            str+=`<li>${li || ''}</li>`
+                        }
+                    }
+                    str+='</ul>';
+                }
+                document.getElementById(id).innerHTML = str;
+            }
         </script>
     </body>
 

@@ -871,3 +871,38 @@ footer{
     width: 100%;
     color: #1a1a1a;
 }
+/* 日历 */
+.calender{
+    width:100%;
+}
+.calender ul{
+    width:100%;
+    margin: 0;
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #aaa;
+}
+.calender ul:first-child{
+    border-top: 1px solid #aaa;
+
+}
+.calender ul li{
+    padding: 0.5em 0;
+    margin: 0;
+    border-left: 1px dashed #111;
+    width:14%;
+    text-align: center;
+    cursor: crosshair;
+}
+.calender ul li:last-child{
+    border-right: 1px dashed #111;
+}
+.calender ul li:hover{
+    background-color: #bebdbc;
+}
+.calender .today{
+    background-color: #cbcbcb;
+    color: #fff;
+}
