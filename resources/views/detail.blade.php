@@ -32,6 +32,7 @@
     </ul>
     <form class="create-comment" action="/comment/add" method="POST">
         @csrf
+        <input type="hidden" name="blog_id" value="{{ $blog->id }}">
         <h3>发表评论</h3>
         <em class="create-tips">电子邮件地址不会被公开。 必填项已用*标注</em>
         <div class="inputbox">
