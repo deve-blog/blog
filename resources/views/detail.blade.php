@@ -30,20 +30,21 @@
         </li>
     @endforeach
     </ul>
-    <form class="create-comment">
+    <form class="create-comment" action="/comment/add" method="POST">
+        @csrf
         <h3>发表评论</h3>
         <em class="create-tips">电子邮件地址不会被公开。 必填项已用*标注</em>
         <div class="inputbox">
             <label for="textarea">评论*</label>
-            <textarea name="textarea" id="" cols="45" rows="8" required></textarea>
+            <textarea name="content" id="content" cols="45" rows="8" required></textarea>
         </div>
         <div class="inputbox">
             <label for="name">姓名*</label>
-            <input class="input" type="text" placeholder="姓名" id="name" required>
+            <input class="input" type="text" name="name" placeholder="姓名" id="name" required>
         </div>
         <div class="inputbox">
             <label for="email">电子邮箱*</label>
-            <input class="input" type="email" placeholder="电子邮箱" id="email" required>
+            <input class="input" type="email" placeholder="电子邮箱" id="email" name="email" required>
         </div>
         <div class="inputbox inputbox-checkbox">
             <input class="checkbox" type="checkbox" name="checkbox" id="checkbox">
