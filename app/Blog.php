@@ -22,13 +22,17 @@ class Blog extends Model
     }
 
     /**
-     * 获取分页博客列表数据
+     * 博客列表数据
+     * @param string $search 搜索
      * @param Paginate $paginate
      * @return Collection
      */
-    public static function getBlogListByPaginate(Paginate $paginate) {
-        return self::orderBy('id', 'desc')
-            ->offset(($paginate->getPage() - 1) * $paginate->getSize())
+    public static function getBlogListByPaginate(Paginate $paginate, string $search = '') {
+        $queryBuilder = self::orderBy('id', 'desc');
+        if (!empty($search)) {
+            $queryBuilder->where('text', 'like', '%' . $search . '%');
+        }
+        return $queryBuilder->offset(($paginate->getPage() - 1) * $paginate->getSize())
             ->limit($paginate->getSize())
             ->get();
     }

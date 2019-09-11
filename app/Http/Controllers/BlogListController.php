@@ -19,11 +19,17 @@ class BlogListController extends Controller
         // 获取博客列表
         $page = intval($request->get('p'));
         $page <= 0 && $page = 1;
+
+        $search = $request->get('search');
+        if (!is_string($search)) {
+            $search = '';
+        }
+
         $paginate = new Paginate($page, config('site.list_size'));
-        $blogList = Blog::getBlogListByPaginate($paginate);
+        $blogList = Blog::getBlogListByPaginate($paginate, $search);
+
         /** @var Blog $blog */
         foreach ($blogList as $blog) {
-            $blog->text = strip_tags($blog->content);
             $blog->created_at_text = $blog->created_at->format('Y年m月d日');
         }
 
