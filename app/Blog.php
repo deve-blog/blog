@@ -22,19 +22,28 @@ class Blog extends Model
     }
 
     /**
-     * 博客列表数据
-     * @param string $search 搜索
+     * 博客列表页搜索
+     * @param array $querys 查询类数组
      * @param Paginate $paginate
-     * @return Collection
+     * @return PagResult
      */
-    public static function getBlogListByPaginate(Paginate $paginate, string $search = '') {
+    public static function getBlogListByPaginate(Paginate $paginate, array $querys = array()) {
+        $pagResult = new PagResult();
+        $pagResult->setPaginate($paginate);
         $queryBuilder = self::orderBy('id', 'desc');
-        if (!empty($search)) {
-            $queryBuilder->where('text', 'like', '%' . $search . '%');
+        $where = array();
+        foreach ($querys as $query) {
+            $where += $query->getQuery();
         }
-        return $queryBuilder->offset(($paginate->getPage() - 1) * $paginate->getSize())
+        if (!empty($where)) {
+            $queryBuilder->where($where);
+        }
+        $pagResult->setTotal($queryBuilder->count());
+        $list = $queryBuilder->offset(($paginate->getPage() - 1) * $paginate->getSize())
             ->limit($paginate->getSize())
             ->get();
+        $pagResult->setList($list);
+        return $pagResult;
     }
 
     /**
@@ -44,7 +53,7 @@ class Blog extends Model
      */
     public static function getRecentBlogList($num) {
         $paginate = new Paginate(1, $num);
-        return self::getBlogListByPaginate($paginate);
+        return self::getBlogListByPaginate($paginate)->getList();
     }
 
     /**
@@ -53,11 +62,10 @@ class Blog extends Model
      * @return Collection
      */
     public static function timeArchive($num) {
-        return self::select(DB::raw("date_format(created_at, '%Y年%m月') date"))
-            ->orderBy('date', 'desc')
+        return self::orderBy('created_at', 'desc')
             ->distinct()
             ->limit($num)
-            ->pluck('date');
+            ->pluck('created_at');
     }
 
     /**

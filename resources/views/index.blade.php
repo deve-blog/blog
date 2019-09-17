@@ -2,7 +2,7 @@
 
 @section("blog-content")
 <ul class="list-section">
-    @foreach ($blogList as $item)
+    @foreach ($pagResult->getList() as $item)
         <li class="list-item">
             <h2><a href="/blog/{{ $item->id }}">{{ $item->title }}</a></h2>
             <div class="options">

@@ -34,7 +34,7 @@
                         <h3>近期文章</h3>
                         <ul>
                         @foreach ($recentBlogList as $item)
-                            <li><a href="#">{{ $item->title }}</a></li>
+                            <li><a href="/blog/{{ $item->id }}">{{ $item->title }}</a></li>
                         @endforeach
                         </ul>
                     </div>
@@ -56,7 +56,7 @@
                         <h3>文章归档</h3>
                         <ul>
                         @foreach ($timeList as $item)
-                            <li><a href="#">{{ $item }}</a></li>
+                            <li><a href="?date={{ $item->format('Ymd') }}">{{ $item->format('Y年m月d') }}</a></li>
                         @endforeach
                         </ul>
                     </div>
@@ -67,7 +67,7 @@
                         <h3>分类目录</h3>
                         <ul>
                         @foreach ($categoryList as $item)
-                            <li><a href="#">{{ $item->cat_name }}</a></li>
+                            <li><a href="/?catId={{ $item->id }}">{{ $item->cat_name }}</a></li>
                         @endforeach
                         </ul>
                     </div>
